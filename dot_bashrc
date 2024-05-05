@@ -57,6 +57,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many completions slow down shell startup.
 completions=(
   system
+  asdf
   composer
   crc
   django
@@ -88,6 +89,7 @@ aliases=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   git
   bashmarks
 )
@@ -121,9 +123,6 @@ source $OSH/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 
 PATH=~/.local/bin:$PATH
 PATH="${PATH}:${HOME}/.krew/bin"
