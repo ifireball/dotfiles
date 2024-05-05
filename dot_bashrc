@@ -1,5 +1,10 @@
 # Path to your oh-my-bash installation.
-export OSH=/home/bkorren/.oh-my-bash
+if [[ $HOME ]]; then
+  export OSH="$HOME/.oh-my-bash"
+else
+  # fallback
+  export OSH=/home/bkorren/.oh-my-bash
+fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
