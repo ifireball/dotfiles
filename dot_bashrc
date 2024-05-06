@@ -92,6 +92,7 @@ plugins=(
   asdf
   git
   bashmarks
+  vscodium-shortcut
 )
 
 source $OSH/oh-my-bash.sh
