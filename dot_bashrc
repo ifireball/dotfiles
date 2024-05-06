@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Path to your oh-my-bash installation.
 if [[ $HOME ]]; then
   export OSH="$HOME/.oh-my-bash"
@@ -89,6 +91,7 @@ aliases=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  mise
   asdf
   git
   bashmarks
