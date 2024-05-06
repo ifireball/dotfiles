@@ -59,6 +59,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many completions slow down shell startup.
 completions=(
   system
+  mise
   asdf
   composer
   crc
