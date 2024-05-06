@@ -1,3 +1,4 @@
 [tools]
 usage = "0.1.18"
 yq = "4.43.1"
+github-cli = "2.49.0"
