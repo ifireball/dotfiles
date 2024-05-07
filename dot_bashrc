@@ -61,22 +61,7 @@ completions=(
   system
   mise
   asdf
-  composer
-  crc
-  django
-  docker
-  gh
-  git
-  go
-  helm
-  maven
-  oc
-  pip3
-  ssh
-  tkn
-  npm
   chezmoi
-  kubectl
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
