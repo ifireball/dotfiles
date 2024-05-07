@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# 3rd party completion loader for commands emitting        -*- shell-script -*-
+# their completion using "$cmd completion bash".
+
+eval -- "$("$1" completion bash 2>/dev/null)"
+
+# ex: filetype=sh
