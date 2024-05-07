@@ -7,8 +7,9 @@ _autoclean_completion() {
     done )
     # _omb_util_command_exists "$compcmd" || complete -r "$compcmd"
     for compcmd in "${compcmds[@]}"; do
-        _omb_util_command_exists "$compcmd" && continue
+        [[ -z $compcmd ]] && continue
         [[ $compcmd == -D ]] && continue
+        _omb_util_command_exists "$compcmd" && continue
         complete -r "$compcmd"
     done
 }
