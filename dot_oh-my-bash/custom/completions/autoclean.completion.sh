@@ -9,6 +9,7 @@ _autoclean_completion() {
     for compcmd in "${compcmds[@]}"; do
         [[ -z $compcmd ]] && continue
         [[ $compcmd == -D ]] && continue
+        [[ $compcmd == "''" ]] && continue
         _omb_util_command_exists "$compcmd" && continue
         complete -r "$compcmd"
     done
