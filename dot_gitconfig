@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Barak Korren
+	email = bkorren@redhat.com
+[alias]
+	ffpull = pull --ff-only
+[core]
+	excludesfile = /home/bkorren/.config/git/gitignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
