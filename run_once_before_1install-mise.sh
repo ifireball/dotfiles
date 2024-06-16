@@ -148,7 +148,7 @@ download_file() {
 
 install_mise() {
 	# download the tarball
-	version="v2024.5.2"
+	version="v2024.6.4"
 	os="$(get_os)"
 	arch="$(get_arch)"
 	install_path="${MISE_INSTALL_PATH:-$HOME/.local/bin/mise}"
