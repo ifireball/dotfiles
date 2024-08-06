@@ -119,3 +119,4 @@ PATH=~/.local/bin:$PATH
 PATH="${PATH}:${HOME}/.krew/bin"
 
 alias dotfiles=chezmoi
+unalias src
