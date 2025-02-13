@@ -1,0 +1,6 @@
+_IBMCLOUD_CMDPATH="$(type -p ibmcloud)" &&
+    _IBMCLOUD_ACPATH="$(dirname $(dirname $_IBMCLOUD_CMDPATH))/autocomplete/bash_autocomplete" &&
+    [ -r "$_IBMCLOUD_ACPATH" ] &&
+    source "$_IBMCLOUD_ACPATH"
+
+unset _IBMCLOUD_CMDPATH _IBMCLOUD_ACPATH
