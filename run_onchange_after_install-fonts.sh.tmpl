@@ -1,0 +1,14 @@
+#!/bin/bash
+# run_onchange_after_install-fonts.sh
+
+# Chezmoi will re-run this script if its content changes.
+# By including a checksum of the font directory, we ensure the script runs
+# whenever font files are added, removed, or modified.
+#
+# CHECKSUM: {{ template "checksum-fonts" . }}
+
+# Only run if on Linux (where fc-cache is relevant for user fonts)
+if [ "$(uname)" = "Linux" ]; then
+    echo "Chezmoi: Updating font cache..."
+    fc-cache -fv
+fi
