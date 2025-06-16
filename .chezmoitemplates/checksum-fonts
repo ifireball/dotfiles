@@ -10,9 +10,9 @@
     The `sort` is crucial for consistent output regardless of file system order.
 */ -}}
 {{- if eq .chezmoi.os "darwin" -}}
-    {{- output "sh" "-c" (print "find " $sourceFontsDir " -type f -print0 | xargs -0 shasum -a 256 | sort") -}}
+    {{- output "sh" "-c" (print "find " $sourceFontsDir " -type f -print0 | xargs -0 shasum -a 256 | sort") | sha256sum -}}
 {{- else if eq .chezmoi.os "linux" -}}
-    {{- output "sh" "-c" (print "find " $sourceFontsDir " -type f -print0 | xargs -0 sha256sum | sort") -}}
+    {{- output "sh" "-c" (print "find " $sourceFontsDir " -type f -print0 | xargs -0 sha256sum | sort") | sha256sum -}}
 {{- else -}}
     {{- /* Fallback or error for other OSes if needed */ -}}
     no-checksum-for-this-os
