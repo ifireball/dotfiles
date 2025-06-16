@@ -10,5 +10,5 @@
 # Only run if on Linux (where fc-cache is relevant for user fonts)
 if [ "$(uname)" = "Linux" ]; then
     echo "Chezmoi: Updating font cache..."
-    fc-cache -fv
+    fc-cache
 fi

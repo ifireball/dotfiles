@@ -1,0 +1,47 @@
+#!/bin/bash
+# run_onchange_before_1gnome-terminal-fonts.sh.tmpl
+#
+# This script configures the font for ALL GNOME Terminal profiles
+# using dconf. It should be run after fonts are installed and cached
+# (e.g., after run_onchange_before_0install-fonts.sh).
+
+# Chezmoi will re-run this script if its content changes.
+# By including a checksum of the font directory, we ensure the script runs
+# whenever font files are added, removed, or modified.
+#
+# CHECKSUM: {{ template "checksum-fonts" . }}
+
+# Ensure the script only runs on Linux systems
+if [ "$(uname)" != "Linux" ]; then
+    exit 0
+fi
+
+CUSTOM_FONT="AdwaitaMono Nerd Font 12"
+
+# Get a list of all GNOME Terminal profile UUIDs.
+# dconf list outputs paths like ':uuid/'
+# We strip the leading ':' and trailing '/' to get just the UUID.
+PROFILE_UUIDS=$(dconf list /org/gnome/terminal/legacy/profiles:/ | sed 's/^://;s/\/$//')
+
+if [ -z "$PROFILE_UUIDS" ]; then
+    exit 0 # Exit successfully as there's nothing to configure
+fi
+
+echo "Configuring GNOME Terminal fonts for all profiles..."
+
+for UUID in $PROFILE_UUIDS; do
+    echo "  - Configuring profile: ${UUID}"
+
+    # Construct the full dconf path for the specific profile's settings.
+    # This path is required by dconf to target the correct profile setting.
+    # Note the exact syntax with colons and slashes.
+    FULL_DCONF_PATH="/org/gnome/terminal/legacy/profiles:/:${UUID}/"
+
+    # Set the custom font for the terminal profile using dconf write.
+    # The font string needs to be enclosed in single quotes within double quotes
+    # for dconf write to parse it correctly, e.g., "'Font Name 12'".
+    dconf write "${FULL_DCONF_PATH}font" "'${CUSTOM_FONT}'"
+
+    # Ensure "Use the system fixed width font" is disabled, so your custom font is used.
+    dconf write "${FULL_DCONF_PATH}use-system-font" "false"
+done
