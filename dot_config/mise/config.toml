@@ -7,6 +7,7 @@ python = "3.11.9"
 src = "0.1.0"
 "ubi:starship/starship" = "1.23.0"
 "ubi:carapace-sh/carapace-bin" = { version = "1.3.2", exe = "carapace" }
+"ubi:atuinsh/atuin" = { version = "18.6.1", matching = ".tar.gz" }
 
 [alias]
 src = "https://github.com/ifireball/asdf-src.git"
