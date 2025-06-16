@@ -17,8 +17,17 @@ if type -t mise >> /dev/null; then
     eval "$(mise hook-env -s bash)"
 fi
 
+if [[ -r /etc/profile.d/bash_completion.sh ]]; then
+    source /etc/profile.d/bash_completion.sh
+fi
+
 if type -t starship >> /dev/null; then
     eval "$(starship init bash)"
 fi
 
 [[ ${BLE_VERSION-} ]] && ble-attach
+
+if type -t carapace >> /dev/null; then
+    export CARAPACE_BRIDGES='cobra,bash'
+    source <(carapace _carapace)
+fi
