@@ -11,3 +11,7 @@ if type -t mise >> /dev/null; then
     # Enable other scripts that follow to use stuff that mise provides
     eval "$(mise hook-env -s bash)"
 fi
+
+if type -t starship >> /dev/null; then
+    eval "$(starship init bash)"
+fi
