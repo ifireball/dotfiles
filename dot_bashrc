@@ -31,3 +31,7 @@ if type -t carapace >> /dev/null; then
     export CARAPACE_BRIDGES='cobra,bash'
     source <(carapace _carapace)
 fi
+
+if type -t atuin >> /dev/null; then
+    eval "$(atuin init bash)"
+fi
