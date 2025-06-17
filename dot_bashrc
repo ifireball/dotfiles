@@ -35,3 +35,7 @@ fi
 if type -t atuin >> /dev/null; then
     eval "$(atuin init bash)"
 fi
+
+if type -t zoxide >> /dev/null; then
+    eval "$(zoxide init bash)"
+fi
