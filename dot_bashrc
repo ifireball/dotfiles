@@ -33,6 +33,19 @@ _vscodium_shortcut_plugin() {
 _vscodium_shortcut_plugin
 unset -f _vscodium_shortcut_plugin
 
+_cursor_shortcut_plugin() {
+    # exit if we already have a "cursor" executable
+    type -t cursor >> /dev/null && return 0
+
+    # Exit if cursor AppImage doesn't exist
+    [[ -f /home/bkorren/AppImages/cursor.appimage ]] || return 0
+
+    alias cursor='/home/bkorren/AppImages/cursor.appimage'
+}
+
+_cursor_shortcut_plugin
+unset -f _cursor_shortcut_plugin
+
 if [[ -r /etc/profile.d/bash_completion.sh ]]; then
     source /etc/profile.d/bash_completion.sh
 fi
