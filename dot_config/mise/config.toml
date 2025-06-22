@@ -10,6 +10,8 @@ src = "0.1.0"
 "ubi:atuinsh/atuin" = { version = "18.6.1", matching = ".tar.gz" }
 zoxide = "0.9.8"
 fzf = "0.62.0"
+cosign = "2.5.2"
+gitsign = "0.13.0"
 
 [alias]
 src = "https://github.com/ifireball/asdf-src.git"
