@@ -1,8 +1,15 @@
 #!/bin/bash
 
-blesh_path=~/.local/share/blesh/ble-0.4.0-devel3/ble.sh
-if [[ -r $blesh_path && $- == *i* ]]; then
-    source "$blesh_path" --attach=none
+IN_EDITOR_TERMINAL=false
+if [[ "$TERM_PROGRAM" == "vscode" || "$TERM_PROGRAM" == "cursor" ]]; then
+    IN_EDITOR_TERMINAL=true
+fi
+
+if [[ "$IN_EDITOR_TERMINAL" != true ]]; then
+    blesh_path=~/.local/share/blesh/ble-0.4.0-devel3/ble.sh
+    if [[ -r $blesh_path && $- == *i* ]]; then
+        source "$blesh_path" --attach=none
+    fi
 fi
 
 PATH=~/.local/bin:$PATH
@@ -51,20 +58,27 @@ if [[ -r /etc/profile.d/bash_completion.sh ]]; then
 fi
 
 if type -t starship >> /dev/null; then
-    eval "$(starship init bash)"
+    # Use basic prompt in VSCode/Cursor, starship otherwise
+    if [[ "$IN_EDITOR_TERMINAL" == true ]]; then
+        PS1='\W\$ '
+    else
+        eval "$(starship init bash)"
+    fi
 fi
-
-[[ ${BLE_VERSION-} ]] && ble-attach
 
 if type -t carapace >> /dev/null; then
     export CARAPACE_BRIDGES='cobra,bash'
     source <(carapace _carapace)
 fi
 
-if type -t atuin >> /dev/null; then
-    eval "$(atuin init bash)"
-fi
+if [[ "$IN_EDITOR_TERMINAL" != true ]]; then
+    [[ ${BLE_VERSION-} ]] && ble-attach
 
-if type -t zoxide >> /dev/null; then
-    eval "$(zoxide init bash)"
+    if type -t atuin >> /dev/null; then
+        eval "$(atuin init bash)"
+    fi
+
+    if type -t zoxide >> /dev/null; then
+        eval "$(zoxide init bash)"
+    fi
 fi
