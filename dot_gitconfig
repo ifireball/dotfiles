@@ -21,3 +21,5 @@
 	format = x509
 [gpg "x509"]
 	program = gitsign
+[ghq]
+	root = /home/bkorren/src

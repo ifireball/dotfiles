@@ -12,6 +12,7 @@ zoxide = "0.9.8"
 fzf = "0.62.0"
 cosign = "2.5.2"
 gitsign = "0.13.0"
+ghq = "1.8.0"
 
 [alias]
 src = "https://github.com/ifireball/asdf-src.git"

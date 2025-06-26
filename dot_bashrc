@@ -53,6 +53,15 @@ _cursor_shortcut_plugin() {
 _cursor_shortcut_plugin
 unset -f _cursor_shortcut_plugin
 
+# Interactively cd into a repository managed by ghq
+repo() {
+  local selected_dir
+  selected_dir=$(ghq list -p | fzf --reverse) # -p lists the full paths
+  if [[ -n "$selected_dir" ]]; then
+    cd "$selected_dir" || return
+  fi
+}
+
 if [[ -r /etc/profile.d/bash_completion.sh ]]; then
     source /etc/profile.d/bash_completion.sh
 fi
