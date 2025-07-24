@@ -25,3 +25,5 @@
 	root = /home/bkorren/src
 [init]
 	defaultBranch = main
+[gitsign]
+	connectorID = https://github.com/login/oauth
