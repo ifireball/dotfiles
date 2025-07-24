@@ -23,3 +23,5 @@
 	program = gitsign
 [ghq]
 	root = /home/bkorren/src
+[init]
+	defaultBranch = main
