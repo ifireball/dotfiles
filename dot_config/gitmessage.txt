@@ -1,3 +1,2 @@
 
-Signed-off-by: Barak Korren <bkorren@redhat.com>
 Assisted-by: Gemini (via Cursor)
