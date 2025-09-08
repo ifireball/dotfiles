@@ -27,3 +27,5 @@
 	defaultBranch = main
 [gitsign]
 	connectorID = https://github.com/login/oauth
+[credential "https://gitlab.cee.redhat.com"]
+	oauthClientId = a9428f31f3f41b88965c6da150420602f379d2d25b200f5edc0071e3ee91c63b

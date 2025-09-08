@@ -77,7 +77,7 @@ fi
 
 if type -t carapace >> /dev/null; then
     export CARAPACE_BRIDGES='cobra,bash'
-    source <(carapace _carapace)
+#    source <(carapace _carapace)
 fi
 
 if [[ "$IN_EDITOR_TERMINAL" != true ]]; then
