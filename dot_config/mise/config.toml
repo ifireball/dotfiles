@@ -15,9 +15,6 @@ gitsign = "0.13.0"
 ghq = "1.8.0"
 "pipx:specify-cli" = "1.0.0"
 
-[alias]
-src = "https://github.com/ifireball/asdf-src.git"
-
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = ["python"]
