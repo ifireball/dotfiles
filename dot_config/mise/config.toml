@@ -1,5 +1,5 @@
 [tools]
-usage = "2.2.2"
+usage = "latest"
 yq = "4.43.1"
 github-cli = "2.49.0"
 pipx = "1.5.0"
@@ -13,6 +13,7 @@ fzf = "0.62.0"
 cosign = "2.5.2"
 gitsign = "0.13.0"
 ghq = "1.8.0"
+"pipx:specify-cli" = "1.0.0"
 
 [alias]
 src = "https://github.com/ifireball/asdf-src.git"

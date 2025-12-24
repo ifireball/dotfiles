@@ -6,6 +6,7 @@
 	ffpull = pull --ff-only
 [core]
 	excludesfile = /home/bkorren/.config/git/gitignore
+	autocrlf = input
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
