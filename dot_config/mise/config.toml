@@ -14,6 +14,8 @@ cosign = "2.5.2"
 gitsign = "0.13.0"
 ghq = "1.8.0"
 "pipx:specify-cli" = "1.0.0"
+gcloud = "560.0.0"
+claude = "2.1.76"
 
 [settings]
 experimental = true
