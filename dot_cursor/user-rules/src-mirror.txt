@@ -1,0 +1,7 @@
+# Paste into Cursor Settings → Rules for AI (canonical copy; chezmoi-managed)
+
+- Clone and checkout under ~/src via ghq using the upstream/canonical HTTPS URL, never SSH (`ghq get -p` is forbidden).
+- Bare owner/repo means GitHub: https://github.com/owner/repo unless a host prefix or full URL is given.
+- Resolve before cloning: run ~/.cursor/skills/src-mirror-layout/scripts/resolve-repo.sh or ghq list -e; never clone blind.
+- Forks are remotes in the upstream path: origin = your fork, upstream = authoritative (when a fork exists). Do not create ~/src/github.com/<your-user>/... for upstream work.
+- Prefer /workon to open an existing clone; /clone to clone or sync explicitly; /fork to add fork remotes after clone.

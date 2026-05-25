@@ -1,0 +1,4 @@
+# Repo-only tooling (not installed to ~)
+scripts/
+executable_scripts/
+executable_dot_cursor/
