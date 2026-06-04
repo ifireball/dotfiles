@@ -1,0 +1,10 @@
+# Paste into Cursor Settings → Rules for AI (canonical copy; chezmoi-managed)
+
+## DCO sign-off on every commit
+
+- Every `git commit` must include a DCO `Signed-off-by` line for **Barak Korren <bkorren@redhat.com>** (from `git config user.name` / `user.email`). Prefer `git commit -s`; global hooks also add and reorder sign-off.
+- **Trailer order** in the commit message: subject/body first, then `Signed-off-by:`, then agent attribution trailers only (`Co-authored-by`, `Assisted-by`, etc.). Do not put `Signed-off-by` after `Co-authored-by` or other attribution lines.
+- Do not add a second `Signed-off-by` or duplicate attribution footers in `-m` / HEREDOC messages; hooks enforce order on `commit-msg`.
+- After committing, verify: `git log -1 --format=%B` contains exactly one `Signed-off-by:` before any `Co-authored-by:` / `Assisted-by:` lines.
+- If DCO CI fails: `git commit --amend -s --no-edit` or rebase with sign-off; never use `--no-signoff`.
+- Do not use `git commit --no-verify` unless the user explicitly requests it (skips DCO enforcement).

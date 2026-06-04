@@ -1,0 +1,12 @@
+#!/bin/sh
+# Final pass: order trailers (after Cursor Co-authored-by injection) and require DCO sign-off.
+set -e
+
+. "$(dirname "$0")/lib-dco-trailers.sh"
+
+dco_fixup_message "$1" || exit 1
+
+if ! dco_message_has_signoff "$1"; then
+	echo "commit-msg: missing Signed-off-by (DCO); use: git commit -s" >&2
+	exit 1
+fi

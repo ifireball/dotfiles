@@ -1,0 +1,10 @@
+#!/bin/sh
+# Add DCO Signed-off-by before agent attribution trailers (prepare pass).
+set -e
+
+case ${2:-} in
+merge | squash) exit 0 ;;
+esac
+
+. "$(dirname "$0")/lib-dco-trailers.sh"
+dco_fixup_message "$1"

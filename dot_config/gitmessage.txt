@@ -1,2 +1,1 @@
-
-Assisted-by: Gemini (via Cursor)
+# Lines starting with # are ignored. Signed-off-by is added by ~/.config/git/hooks (DCO).

@@ -19,4 +19,7 @@ After `chezmoi apply`, verify clone layout and scripts:
 ~/.cursor/skills/src-mirror-layout/scripts/verify-src-mirror.sh --all
 ```
 
-Paste `~/.cursor/user-rules/src-mirror.txt` into **Cursor Settings → Rules for AI**.
+Paste into **Cursor Settings → Rules for AI**:
+
+- `~/.cursor/user-rules/src-mirror.txt`
+- `~/.cursor/user-rules/dco-signoff.txt` (DCO `Signed-off-by` for agent commits; pairs with `~/.config/git/hooks`)
