@@ -1,0 +1,14 @@
+{
+  "userSettings": {
+    "globalPermissionGrants": {
+      "allow": [
+        "command(which)",
+        "command(ghq)",
+        "command(git config)",
+        "command(ls)"
+      ]
+    },
+    "remoteControlHostname": "fedora-turbo-orbit",
+    "themeMode": "THEME_MODE_INHERIT"
+  }
+}
