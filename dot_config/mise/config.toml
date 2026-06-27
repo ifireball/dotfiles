@@ -1,21 +1,23 @@
 [tools]
 usage = "latest"
-yq = "4.43.1"
-pipx = "1.5.0"
-python = "3.11.9"
+yq = "4.53.3"
+pipx = "1.15.0"
+python = "3.14.6"
 src = "0.1.0"
-"ubi:starship/starship" = "1.23.0"
-"ubi:carapace-sh/carapace-bin" = { version = "1.3.2", exe = "carapace" }
-"ubi:atuinsh/atuin" = { version = "18.6.1", matching = ".tar.gz" }
-zoxide = "0.9.8"
-fzf = "0.62.0"
-cosign = "2.5.2"
-gitsign = "0.13.0"
-ghq = "1.8.0"
+"ubi:starship/starship" = "1.25.1"
+"ubi:carapace-sh/carapace-bin" = { version = "1.7.1", exe = "carapace" }
+zoxide = "0.9.9"
+fzf = "0.73.1"
+cosign = "3.1.1"
+gitsign = "0.16.1"
+ghq = "1.10.1"
 "pipx:specify-cli" = "1.0.0"
-gcloud = "560.0.0"
-claude = "2.1.83"
-gh = "2.92.0"
+gcloud = "574.0.0"
+claude = "2.1.193"
+gh = "2.95.0"
+atuin = "18.16.1"
+node = "24.18.0"
+gemini-cli = { version = "0.49.0", allow_builds = ["@github/keytar", "node-pty"] }
 
 [settings]
 experimental = true

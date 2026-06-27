@@ -5,12 +5,12 @@ if [[ "$TERM_PROGRAM" == "vscode" || "$TERM_PROGRAM" == "cursor" ]]; then
     IN_EDITOR_TERMINAL=true
 fi
 
-if [[ "$IN_EDITOR_TERMINAL" != true ]]; then
-    blesh_path=~/.local/share/blesh/ble-0.4.0-devel3/ble.sh
-    if [[ -r $blesh_path && $- == *i* ]]; then
-        source "$blesh_path" --attach=none
-    fi
-fi
+# if [[ "$IN_EDITOR_TERMINAL" != true ]]; then
+#     blesh_path=~/.local/share/blesh/ble-0.4.0-devel3/ble.sh
+#     if [[ -r $blesh_path && $- == *i* ]]; then
+#         source "$blesh_path" --attach=none
+#     fi
+# fi
 
 PATH=~/.local/bin:$PATH
 PATH="${PATH}:${HOME}/.krew/bin"
